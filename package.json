@@ -1,7 +1,6 @@
 {
   "name": "bot2",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -26,5 +25,7 @@
     "firebase-admin": "^6.3.0",
     "firebase-functions": "^2.1.0",
     "save": "^2.3.3"
-  }
+  },
+  "devDependencies": {},
+  "description": ""
 }
