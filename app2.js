@@ -2,6 +2,15 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const functions = require('firebase-functions');
 const {WebhookClient,Card,} = require('dialogflow-fulfillment');
+var admin = require('firebase-admin');
+
+var serviceAccount = require('path/to/serviceAccountKey.json');
+
+admin.initializeApp({
+  credential: admin.credential.cert(serviceAccount),
+  databaseURL: 'https://fulfilmentbot.firebaseio.com'
+});
+
 
 const App = express().use(bodyParser.json());
 App.post('/fulfillment', functions.https.onRequest((request, response) => {
@@ -23,7 +32,7 @@ App.post('/fulfillment', functions.https.onRequest((request, response) => {
  }
 function telldatefunction(agent) {
     agent.add('Today is a good day');
-    
+
 }
 
  // Run the proper function handler based on the matched Dialogflow intent name
